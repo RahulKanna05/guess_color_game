@@ -45,6 +45,9 @@ def reset_game():
     display_word.config(text='')
     game_time.config(text='Time Left: -')
     entry.delete(0,END)
+    displayed_word_color = random.choice(colors).lower()
+    word = random.choice(colors)
+    display_word.config(text=word, fg=displayed_word_color)
 
 win = Tk()
 win.geometry('600x550')
@@ -69,7 +72,7 @@ des.pack()
 game_score = Label(win,text='Your Score: '+ str(score),fg='green',font=font.Font(family='Helvetica',size=18,weight='bold'))
 game_score.pack(pady=10)
 
-display_word = Label(win,font=font.Font(family='Helvetica',size=16))
+display_word = Label(win,font=font.Font(family='Helvetica',size=24))
 display_word.pack()
 
 game_time=Label(win,text='Time left: -',font=font.Font(family='Helvetica',size=18,weight='bold'),fg='blue')
